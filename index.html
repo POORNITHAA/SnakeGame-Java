@@ -1,19 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <title>Snake Game Online</title>
-    <script src="https://cjrtnc.leaningtech.com/3.0/loader.js"></script>
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
 </head>
-<body style="margin:0; padding:0; background-color: #121212; display: flex; justify-content: center; align-items: center; height: 100vh;">
-    
+<body style="margin:0; background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <script>
-        // Initialize CheerpJ
-        cheerpjInit();
-        // Create the display area and run the JAR
-        cheerpjCreateDisplay(800, 600);
-        cheerpjRunJar("SnakeGame.jar");
+        (async function () {
+            // Wait for the engine to wake up
+            await cheerpjInit();
+            // Create the game window
+            cheerpjCreateDisplay(800, 600);
+            // Run the JAR (Must use /app/ prefix for CheerpJ)
+            await cheerpjRunJar("SnakeGame.jar");
+        })();
     </script>
-
 </body>
 </html>
